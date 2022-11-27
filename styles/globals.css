@@ -15,9 +15,18 @@ a {
   text-decoration: none;
 }
 
+.container {
+  @apply px-5;
+}
+
+.sidebar {
+  @apply bg-white;
+}
+
 * {
   box-sizing: border-box;
 }
+
 
 @media (prefers-color-scheme: dark) {
   html {
@@ -25,7 +34,7 @@ a {
   }
 
   body {
-    color: black;
-    background: white;
+    background: rgb(0, 150, 136);
+    background: linear-gradient(180deg, rgba(0, 150, 136, 1) 0%, rgba(0, 150, 136, 1) 15%, #101b21 15%, #101b21 130%);
   }
 }
