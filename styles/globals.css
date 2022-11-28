@@ -34,7 +34,7 @@ a {
   }
 
   body {
-    background: rgb(0, 150, 136);
-    background: linear-gradient(180deg, rgba(0, 150, 136, 1) 0%, rgba(0, 150, 136, 1) 15%, #101b21 15%, #101b21 130%);
+    background: #009b9e;
+    background: linear-gradient(180deg, #009b9e 0%, #009b9e 15%, #101b21 15%, #101b21 130%);
   }
 }
