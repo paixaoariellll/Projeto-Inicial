@@ -1,0 +1,15 @@
+[
+  {
+    "timestamp": { "secounds": 1633332386, "nanoseconds": 7773332386 },
+    "users": ["gabriel@gmail.com", "ariel@gmail.com"],
+    "photoURL": "",
+    "name": "Gabriel",
+    "latestMessage": "Vamos de dale!"
+  },
+  {
+    "latestMessage": "vamos pow!",
+    "timestamp": { "secounds": 1633332389, "nanoseconds": 8883332382 },
+    "name": "Ariel",
+    "users": ["pedro@gmail.com", "joão@gmail.com"]
+  }
+]

@@ -3,7 +3,8 @@ import { Avatar, IconButton } from '@mui/material';
 import MessageIcon from '@mui/icons-material/Message';
 import VerticalItens from './DropdownHeader';
 import SearchIcon from '@mui/icons-material/Search';
-
+import chat from '../data/chats.json'
+import Chat from './Chat';
 const Sidebar = () => {
     return (
         <Container className='sidebar'>
@@ -22,6 +23,14 @@ const Sidebar = () => {
                     <SearchInput />
                 </SearchBar>
             </SearchChat>
+            {chat.map(chat => (
+                <Chat
+                    latestMessage={chat.latestMessage}
+                    name={chat.name}
+                    timestamp={chat.timestamp}
+                    photoURL={chat.photoURL}
+                />
+            ))}
         </Container>
     )
 }
