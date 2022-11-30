@@ -28,7 +28,6 @@ const ChatContent = () => {
                 </IconButton>
             </Header>
             <MessagesContainer className='w-full text-gray-700'>
-                {/* <Image src={fish} height={250} width={250} className="flex absolute " /> */}
                 {Messages.map(message =>
                     <Message
                         key={message.id}

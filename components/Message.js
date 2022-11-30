@@ -1,12 +1,21 @@
 import styled from "styled-components"
+import moment from "moment";
 
 const Message = ({ user, message, timestamp }) => {
     const loginMail = "gabriel@gmail.com"
     const MessageType = user === loginMail ? MyMessage : FrdMessage;
     return (
         <Container>
+            {
+                (user === loginMail) &&
+                <MessageTail>
+                </MessageTail>
+            }
             <MessageType>
                 {message}
+                <Timestamp>
+                    {moment(timestamp).format('LT')}
+                </Timestamp>
             </MessageType>
         </Container>
     )
@@ -40,5 +49,16 @@ const FrdMessage = styled(MessageBubble)`
 `;
 
 const MessageTail = styled.span`
-    margin-top: -4px
+    margin-top: -8px
+`;
+
+const Timestamp = styled.span`
+    color: gray;
+    padding: 10px;
+    font-size: 9px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-weight: bold;
+    text-align: right;
 `;

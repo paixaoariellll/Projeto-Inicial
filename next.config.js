@@ -5,6 +5,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: [
+      "assets.stickpng.com",
       "links.papareact.com",
       "plataform-lookaside.fbsbx.com",
       "firebasestorage.googleapis.com",
