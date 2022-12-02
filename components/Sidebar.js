@@ -3,16 +3,30 @@ import { Avatar, IconButton } from '@mui/material';
 import MessageIcon from '@mui/icons-material/Message';
 import VerticalItens from './DropdownHeader';
 import SearchIcon from '@mui/icons-material/Search';
-import chat from '../data/chats.json'
+import chat from '../data/chats.json';
 import Chat from './Chat';
+import { auth, database } from '../firebase';
+import * as EmailValidator from 'email-validator';
+import { useAuthState } from 'react-firebase-hooks/auth';
+
 const Sidebar = () => {
+    const user = useAuthState(auth);
+    const createChat = () => {
+        const input = prompt('Por favor, digite o nome do cliente que deseja conversar');
+        if (!input) return null;
+        if (EmailValidator.validate(input)) {
+            database.collection('chats').add({
+                users: [user.email, input],
+            })
+        }
+    };
     return (
         <Container className='sidebar'>
             <Header>
-                <UserAvatar src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+                <UserAvatar onClick={() => auth.signOut()} src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
                 <IconsGroup>
                     <IconButton>
-                        <MessageIcon />
+                        <MessageIcon onClick={createChat} />
                     </IconButton>
                     <VerticalItens />
                 </IconsGroup>
@@ -86,4 +100,8 @@ const SearchBar = styled.div`
 const SearchInput = styled.div`
     width: 100%;
     border: none;
+`;
+
+const CreateChat = styled.div`
+
 `;

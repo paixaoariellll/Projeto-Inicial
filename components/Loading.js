@@ -1,21 +1,18 @@
-import { Grid } from '@mui/material';
-import ReactLoading from 'react-loading';
+import Image from 'next/image';
+import React from 'react';
+import fish from '../publi/fish.png';
 
-const Loading = ({ type, color }) => {
+function Loading() {
     return (
-        <Grid
-            container
-            spacing={0}
-            direction="column"
-            alignItems="center"
-            justifyContent="center"
-            style={{
-                minHeight: '100vh', backgroundColor: 'whitesmoke'
-            }}>
-            <ReactLoading type={type} color={color} height={'20%'} width={'20%'} />
-        </Grid >
-
-
+        <center>
+            <div>
+                <Image src={fish} width={300} height={300}
+                    alt="loading"
+                    style={{ marginBottom: 10 }}
+                />
+                <Circle color="#696969" size={350} />
+            </div>
+        </center>
     )
 }
 
